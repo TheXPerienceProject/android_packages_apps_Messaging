@@ -13,6 +13,8 @@
 #  limitations under the License.
 LOCAL_PATH:= $(call my-dir)
 
+ifneq ($(TARGET_NO_TELEPHONY),true)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
@@ -72,4 +74,5 @@ LOCAL_SDK_VERSION := current
 
 include $(BUILD_PACKAGE)
 
+endif # TARGET_NO_TELEPHONY
 include $(call all-makefiles-under, $(LOCAL_PATH))
